@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "830355478509",
+    "project_id": "prontuario-861aa",
+    "storage_bucket": "prontuario-861aa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830355478509:android:d8912bb2abaa2cdc9679e4",
+        "android_client_info": {
+          "package_name": "prontuario.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoWUOkfhOtNnt23BxsJYh8kmJzp6hrr3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

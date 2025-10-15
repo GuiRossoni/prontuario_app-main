@@ -76,8 +76,9 @@ class _FormularioProntuarioScreenState
                 controller: _pacienteController,
                 decoration: InputDecoration(labelText: 'Nome do Paciente'),
                 validator: (value) {
-                  if (value == null || value.trim().isEmpty)
+                  if (value == null || value.trim().isEmpty) {
                     return 'Informe o nome do paciente';
+                  }
                   if (value.trim().length < 3) return 'Nome muito curto';
                   return null;
                 },
@@ -87,8 +88,9 @@ class _FormularioProntuarioScreenState
                 decoration: InputDecoration(labelText: 'Descrição'),
                 maxLines: 3,
                 validator: (value) {
-                  if (value == null || value.trim().isEmpty)
+                  if (value == null || value.trim().isEmpty) {
                     return 'Informe a descrição';
+                  }
                   if (value.trim().length < 5) return 'Descrição muito curta';
                   return null;
                 },

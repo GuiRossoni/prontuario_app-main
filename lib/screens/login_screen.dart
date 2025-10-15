@@ -104,8 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: true,
                 validator: (v) {
                   if (v == null || v.isEmpty) return 'Informe a senha';
-                  if (v.length < 6)
+                  if (v.length < 6) {
                     return 'A senha deve ter pelo menos 6 caracteres';
+                  }
                   return null;
                 },
               ),

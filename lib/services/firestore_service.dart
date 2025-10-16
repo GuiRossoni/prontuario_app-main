@@ -2,8 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/prontuario.dart';
 
 class FirestoreService {
-  final CollectionReference prontuariosCollection = FirebaseFirestore.instance
-      .collection('prontuarios');
+  final FirebaseFirestore _db;
+  late final CollectionReference prontuariosCollection;
+
+  FirestoreService({FirebaseFirestore? firestore})
+    : _db = firestore ?? FirebaseFirestore.instance {
+    prontuariosCollection = _db.collection('prontuarios');
+  }
 
   Future<void> adicionarProntuario(Prontuario prontuario) async {
     await prontuariosCollection.add(prontuario.toMap());

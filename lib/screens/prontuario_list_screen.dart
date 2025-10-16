@@ -109,17 +109,27 @@ class _ProntuarioListScreenState extends State<ProntuarioListScreen> {
                     return ListTile(
                       title: Text(p.paciente),
                       subtitle: Text('${p.descricao}\n$formatted'),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              FormularioProntuarioScreen(existente: p),
-                        ),
-                      ),
-                      trailing: IconButton(
-                        icon: const Icon(Icons.delete),
-                        onPressed: () =>
-                            firestoreService.deletarProntuario(p.id!),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            tooltip: 'Editar',
+                            icon: const Icon(Icons.edit),
+                            onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) =>
+                                    FormularioProntuarioScreen(existente: p),
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            tooltip: 'Excluir',
+                            icon: const Icon(Icons.delete),
+                            onPressed: () =>
+                                firestoreService.deletarProntuario(p.id!),
+                          ),
+                        ],
                       ),
                     );
                   },

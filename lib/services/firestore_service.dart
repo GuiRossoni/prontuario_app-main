@@ -38,7 +38,7 @@ class FirestoreService {
     // orderBy deve vir antes de startAt/endAt na API
     final query = prontuariosCollection
         .orderBy('paciente_lower')
-        // .orderBy('data', descending: true) // opcional: exige índices compostos e cursores múltiplos
+        // .orderBy('data', descending: true)
         .startAt([start])
         .endAt([end]);
     return query.snapshots().map(_toProntuarios);

@@ -60,7 +60,6 @@ class _AuthGateState extends State<_AuthGate> {
   @override
   void initState() {
     super.initState();
-    // Solicitar permissão FCM (Android 13+/iOS) e logar token
     () async {
       try {
         await FirebaseMessaging.instance.requestPermission();
@@ -68,7 +67,6 @@ class _AuthGateState extends State<_AuthGate> {
       } catch (_) {}
     }();
 
-    // Mensagens recebidas em primeiro plano
     FirebaseMessaging.onMessage.listen((message) {
       final notification = message.notification;
       if (notification != null && mounted) {

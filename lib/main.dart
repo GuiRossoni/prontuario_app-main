@@ -67,6 +67,7 @@ class _AuthGateState extends State<_AuthGate> {
       } catch (_) {}
     }();
 
+    //AHHHHHHHHHHHHH SOCORRO COM ESSE TRECO QUE NAO FUNCIONA
     FirebaseMessaging.onMessage.listen((message) {
       final notification = message.notification;
       if (notification != null && mounted) {
